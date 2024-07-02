@@ -1,9 +1,11 @@
+import { generateRandomNumber, generateRandomString } from "../../../support/utils/utilityFunctions";
 import { BasePage } from "../../basePage";
+import { ICustomWorld } from "../../world";
 
 
 export default class RegistrationComponent extends BasePage{
 
-  private readonly registrationElements = {
+  private readonly registerElements = {
     
     firstnameInput: `[name='FirstName']`,
     lastnameInput: `[name='LastName']`,
@@ -17,66 +19,90 @@ export default class RegistrationComponent extends BasePage{
     registerButton: `.bto-btn-register`,
     userLogged: `[class='bto-user-logged']`,
     userIcon: `bto-icon-user`,
-    //userDropDown: '#btoPlayerMenuMob',
-    //personalInfoOption: `#btoPlayerMenuMob [href='https://qa.btobet.net/player-portal/#personal']`
+    sportbookTab: `#menu-item-1158 > a`,
+    dropdownMenu: `//div[@class='bto-user-logged']//div[@class='btn-group personal']//button[@type='button']`,
+    personalInfoOption: `//ul[@class='dropdown-menu dropdown-menu-right']//a[normalize-space()='Personal Info']`,
+    userFirstNameInputValue: `input[name="FirstName"]`
    
   }
 
-
-  async fillInFirstName(user:string) {
-    await this.page.locator(this.registrationElements.firstnameInput).fill(user);
+  
+  async enterFirstname(iCustomWorld: ICustomWorld){
+    const randomFirstname = generateRandomString(9);
+    await this.page.locator(this.registerElements.firstnameInput).fill(randomFirstname);
+    iCustomWorld.firstname = randomFirstname;
   }
 
-  async fillInLastName(user:string) {
-    await this.page.locator(this.registrationElements.lastnameInput).fill(user);
+  async enterLastName(iCustomWorld: ICustomWorld) {
+    const randomLastname = generateRandomString(8);
+    await this.page.locator(this.registerElements.lastnameInput).fill(randomLastname);
+    iCustomWorld.lastname = randomLastname;
   }
 
-  async fillInUsername(username:string) {
-    await this.page.locator(this.registrationElements.usernameInput).fill(username);
+  async enterUsername(iCustomWorld: ICustomWorld) {
+    const randomUsername = generateRandomString(4) + generateRandomNumber(5);
+    await this.page.locator(this.registerElements.usernameInput).fill(randomUsername)
+    iCustomWorld.username = randomUsername;
+    
   }
 
-  async fillInEmail(email:string) {
-    await this.page.locator(this.registrationElements.emailInput).fill(email);
+  async enterEmail(iCustomWorld: ICustomWorld) {
+    const randomEmail = generateRandomString(4) + generateRandomNumber(5) + '@test.com';
+    await this.page.locator(this.registerElements.emailInput).fill(randomEmail)
+    iCustomWorld.email = randomEmail;
   }
 
-  async fillInPhoneNumber(phoneNum:string) {
-    await this.page.locator(this.registrationElements.phoneNumberInput).fill(phoneNum);
+  async enterPhoneNumber(iCustomWorld: ICustomWorld) {
+    const randomPhoneNumber = '234' + generateRandomNumber(9);
+    await this.page.locator(this.registerElements.phoneNumberInput).fill(randomPhoneNumber)
+    iCustomWorld.phone = randomPhoneNumber;
   }
   
-  async fillInPassword(password:string) {
-    await this.page.locator(this.registrationElements.passwordInput).fill(password);
+  async enterPassword() {
+    const randomPassword = 'B2Btests@';
+    await this.page.locator(this.registerElements.passwordInput).fill(randomPassword)
   }
 
-  async fillInConfirmPassword(password:string) {
-    await this.page.locator(this.registrationElements.confirmPasswordInput).fill(password);
+  async enterConfirmPassword() {
+    const randomPassword = 'B2Btests@';
+    await this.page.locator(this.registerElements.confirmPasswordInput).fill(randomPassword)
+  }
+  async enterPromoCode() {
+    const randomPromoCode = generateRandomString(4);
+    await this.page.locator(this.registerElements.promoCodeInput).fill(randomPromoCode)
   }
   
-  async fillInPromoCode(code:string) {
-    await this.page.locator(this.registrationElements.promoCodeInput).fill(code);
-  }
-  
-  async checkTermsAndConditionsCheckbox() {
-    await this.page.locator(this.registrationElements.termsAnConditionsCheckbox).click();
+  async clickTermsAndConditionsCheckbox() {
+    await this.page.locator(this.registerElements.termsAnConditionsCheckbox).click();
   }
   
   async clickRegisterButton() {
-    await this.page.locator(this.registrationElements.registerButton).click();
+    await this.page.locator(this.registerElements.registerButton).click();
   }
 
   getLoggedUser() {
-    return this.page.waitForSelector(this.registrationElements.userLogged);
+    return this.page.waitForSelector(this.registerElements.userLogged);
   }
 
-  // async openDropdown() {
-  //   await this.page.locator(this.registrationElements.userDropDown).click();
-  // }
+  async clickOnSportbookTab() {
+    await this.page.click(this.registerElements.sportbookTab);
+  
+  }
 
-  // async selectPersonalInfo() {
-  //   await this.page.locator(this.registrationElements.userDropDown).click();
-  // }
-//personalInfoOption
-  // async waitForText(){
-  //   await this.page.locator(this.registrationElements.welcomeText).waitFor();
-  // }
+  async expandDropdown() {
+    await this.page.waitForLoadState("networkidle")
+    await this.page.click(this.registerElements.dropdownMenu);
+  }
+
+  async selectPersonalInfo() {
+    await this.page.waitForSelector(this.registerElements.personalInfoOption);
+    await this.page.click(this.registerElements.personalInfoOption);
+  }
+
+  async getUserFirstName() {
+    const userFirstname = (await this.page.waitForSelector(this.registerElements.userFirstNameInputValue)).getAttribute('value')
+
+    return userFirstname;
+  }
 
 };

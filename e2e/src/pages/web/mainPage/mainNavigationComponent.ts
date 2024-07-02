@@ -1,6 +1,6 @@
 import { BasePage } from '../../basePage';
 
-export default class MainNavComponent extends BasePage {
+export default class mainNavigationComponent extends BasePage {
   
 
   async navigateToRegistrationPage() {
