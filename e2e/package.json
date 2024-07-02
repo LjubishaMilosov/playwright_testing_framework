@@ -1,0 +1,56 @@
+{
+  "name": "uitesting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cucumber:web": "npx cucumber-js --tags \"not @mobile\"",
+    "cucumber:mobile": "cucumber-js --tags @mobile",
+    "cucumber:all": "npx cucumber-js",
+    "cucumber:dev": "npx cucumber-js --tags \"@dev\"",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,feature}\"",
+    "snippets": "cucumber-js --dry-run --format snippets",
+    "steps-usage": "cucumber-js --dry-run",
+    "debug": "cross-env PWDEBUG=1 DEBUG=pw:api cucumber-js --tags \"@dev\" --tags \"not @mobile\"",
+    "debug:mobile": "cross-env PWDEBUG=1 DEBUG=pw:api cucumber-js --tags \"@dev\" --tags @mobile",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "Ljubisha Milosov",
+  "license": "ISC",
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.8.0",
+    "@faker-js/faker": "^8.4.1",
+    "@playwright/test": "^1.44.1",
+    "@types/cucumber": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-cucumber": "^2.0.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-playwright": "^0.15.3",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.3.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-gherkin": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run lint",
+      "npm run format"
+    ]
+  }
+}

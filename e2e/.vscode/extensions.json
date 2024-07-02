@@ -1,0 +1,14 @@
+{ 
+	// Type @recommended inside the "Search extensions in Marketplace"
+	// For more information, visit: http://go.microsoft.com/fwlink/?LinkId=827846
+	"recommendations": [
+		// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+		"esbenp.prettier-vscode",
+		"dbaeumer.vscode-eslint",
+		"vscode-icons-team.vscode-icons",
+		"alexkrechik.cucumberautocomplete",
+		"eamodio.gitlens",
+    "dotenv.dotenv-vscode",
+    "steoates.autoimport"
+	]
+}
