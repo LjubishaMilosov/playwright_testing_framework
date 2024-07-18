@@ -2,6 +2,7 @@ import { checkFileExists } from './src/support/utils/checkFileExists.mjs';
 
 const featureOrder = [
    'web/registration.feature',
+   'web/login.feature',
 ];
 
 const config = {

@@ -3,7 +3,7 @@ import { BasePage } from '../../basePage';
 export default class mainNavigationComponent extends BasePage {
   
 
-  async navigateToRegistrationPage() {
+  async navigateToMainPage() {
     await this.goto();
   }
 

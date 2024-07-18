@@ -1,5 +1,59 @@
 import { ICustomWorld } from './../../pages/world';
 
+
+
+export function generateRandomString(length: number): string {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  let result = '';
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return result;
+}
+
+
+export function generateRandomNumber(length: number): string {
+  const digits = '0123456789';
+  let randomNumber = '';
+
+  for (let i = 0; i < length; i++) {
+    randomNumber += digits[Math.floor(Math.random() * digits.length)];
+  }
+
+  return randomNumber;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export function getRandomIndexNotFirst(max: number): number {
   // Generate a random index excluding the first element
   return Math.floor(Math.random() * (max - 1)) + 1;
@@ -114,28 +168,4 @@ export function getRandomIndexNotPresentInArray(length: number, excludedNumbers:
     randomIndex = Math.floor(Math.random() * (length - 1)) + 1; // Start from index 1
   } while (excludedNumbers.includes(randomIndex));
   return randomIndex;
-}
-
-
-
-
-export function generateRandomString(length: number): string {
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-  let result = '';
-  for (let i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * characters.length));
-  }
-  return result;
-}
-
-
-export function generateRandomNumber(length: number): string {
-  const digits = '0123456789';
-  let randomNumber = '';
-
-  for (let i = 0; i < length; i++) {
-    randomNumber += digits[Math.floor(Math.random() * digits.length)];
-  }
-
-  return randomNumber;
 }
