@@ -3,8 +3,7 @@ import { findCredentialsForEnv } from "../../support/auth/auth";
 import { Given, Then, When} from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 
-Given('I navigate to the home page', async function(this:ICustomWorld) {
-    //this.pagesObj?.mainNavigationComponent.navigateToMainPage();
+Given(/^I navigate to the home page$/, async function(this:ICustomWorld) {
     await this.pagesObj?.basePage.goto();
 });
 

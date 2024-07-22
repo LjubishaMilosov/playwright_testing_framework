@@ -41,7 +41,8 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.3.0",
     "prettier": "^3.0.3",
-    "prettier-plugin-gherkin": "^2.0.0"
+    "prettier-plugin-gherkin": "^2.0.0",
+    "typescript": "^5.5.3"
   },
   "repository": {
     "type": "git",
