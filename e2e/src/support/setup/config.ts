@@ -11,7 +11,7 @@ const config = {
   emulator: process.env.EMULATION || 'browser',
   runHeadless: Boolean(process.env.HEADLESS) || false,
   recordVideos: process.env.PWVIDEO || false,
-  defaultTimeout: 120 * 10000,
+  defaultTimeout: 60 * 1000,
   runSlow: 0,
   trace: Boolean(process.env.TRACE) || false,
 };

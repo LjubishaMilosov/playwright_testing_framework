@@ -6,12 +6,15 @@ import LoginComponent from './mainPage/loginComponent';
 
 
 
+
 export class PomProvider {
   basePage: BasePage;
   
   mainNavigationComponent: MainNavigationComponent;
   registrationComponent: RegistrationComponent;
   loginComponent: LoginComponent;
+  
+
 
   constructor(page: Page, context: BrowserContext) {
     this.basePage = new BasePage(page, context);

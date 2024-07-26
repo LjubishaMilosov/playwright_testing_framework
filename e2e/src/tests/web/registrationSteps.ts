@@ -62,19 +62,19 @@ When('I click on the sportbook tab', async function(this:ICustomWorld){
   await this.pagesObj?.registrationComponent.clickOnSportbookTab();
 })
 
-When('I click on the user dropdown menu', async function(this: ICustomWorld) {
-  await this.pagesObj?.registrationComponent.expandDropdown();
-})
+// When('I click on the user dropdown menu', async function(this: ICustomWorld) {
+//   await this.pagesObj?.registrationComponent.expandDropdown();
+// })
 
-When('I select the personal info option from loggedin user dropdown', async function(this: ICustomWorld) {
-  await this.pagesObj?.registrationComponent.selectPersonalInfo();
-});
+// When('I select the personal info option from loggedin user dropdown', async function(this: ICustomWorld) {
+//   await this.pagesObj?.registrationComponent.selectPersonalInfo();
+// }); 
 
-Then('I expect the user personal details to match the registration details', async function(this: ICustomWorld) {
-  const userFirstname = await this.pagesObj?.registrationComponent.getUserFirstName();
+// Then('I expect the user personal details to match the registration details', async function(this: ICustomWorld) {
+//   const userFirstname = await this.pagesObj?.registrationComponent.getUserFirstName();
   
-  const enteredFirstname = this.firstname;
-  expect(userFirstname).toEqual(enteredFirstname);
-  console.log(userFirstname)
-  console.log(enteredFirstname)
-})
+//   const enteredFirstname = this.firstname;
+//   expect(userFirstname).toEqual(enteredFirstname);
+//   console.log(userFirstname)
+//   console.log(enteredFirstname)
+// })

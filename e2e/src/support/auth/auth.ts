@@ -4,6 +4,12 @@ import { ICustomWorld } from '../../pages/world';
 interface Player {
   username: string;
   password: string;
+  firstname: string;
+  lastname: string;
+  email: string;
+  phone: string;
+
+
 }
 
 export const findCredentialsForEnv = (iCustomWorld: ICustomWorld): Player | null => {
