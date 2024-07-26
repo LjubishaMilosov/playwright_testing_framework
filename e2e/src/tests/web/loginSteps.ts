@@ -41,27 +41,28 @@ Then('I expect the user personal details to match the registration details', asy
   const userPhonenumber = await this.pagesObj?.loginComponent.getUserPhoneNumber();
   const credentials = findCredentialsForEnv(this);
 
-  const enteredUsername = credentials!.username;
-  const enteredFirstname = credentials!.firstname;
-  const enteredLastname = credentials!.lastname;
-  const enteredEmail = credentials!.email;
-  const enteredUserPhonenumber = credentials!.phone;
+  const expectedUsername = credentials!.username;
+  const expectedFirstname = credentials!.firstname;
+  const expectedLastname = credentials!.lastname;
+  const expectedEmail = credentials!.email;
+  const expectedUserPhonenumber = credentials!.phone;
 
-  expect(userUsername).toEqual(enteredUsername);
-  expect(userFirstname).toEqual(enteredFirstname);
-  expect(userLastname).toEqual(enteredLastname);
-  expect(userEmail).toEqual(enteredEmail);
-  expect(userPhonenumber).toEqual(enteredUserPhonenumber);
+  //expect(userUsername).toEqual(enteredUsername);
+  expect(userUsername).toEqual(expectedUsername);
+  expect(userFirstname).toEqual(expectedFirstname);
+  expect(userLastname).toEqual(expectedLastname);
+  expect(userEmail).toEqual(expectedEmail);
+  expect(userPhonenumber).toEqual(expectedUserPhonenumber);
 //   console.log(userUsername);
-//   console.log(enteredUsername);
+//   console.log(expectedUsername);
 //   console.log(userFirstname);
-//   console.log(enteredFirstname);
+//   console.log(expectedFirstname);
 //   console.log(userLastname);
-//   console.log(enteredLastname);
+//   console.log(expectedLastname);
 //   console.log(userEmail);
-//   console.log(enteredEmail);
+//   console.log(expectedEmail);
 //   console.log(userPhonenumber);
-//   console.log(enteredUserPhonenumber);
+//   console.log(expectedUserPhonenumber);
 
 
 })
