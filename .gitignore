@@ -1,0 +1,23 @@
+# Dependency directories
+#node_modules/
+
+# Reports
+out/reports/*.html
+out/reports/*.xsd
+out/screenshots/*.png
+out/videos/*.webm
+out/trace/*.zip
+
+# Optional eslint cache
+.eslintcache
+
+# dotenv environment variables file
+.env
+
+# Credentials.json file in the auth directory
+src/support/auth/credentials.json
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+node_modules
