@@ -31,7 +31,7 @@
     "prettier.singleQuote": true,
     "prettier.trailingComma": "all",
   
-    "cucumberautocomplete.syncfeatures": "./features/**/*.feature",
+    "cucumberautocomplete.syncfeatures": "./e2e/features/**/*.feature",
     "editor.defaultFormatter": "alexkrechik.cucumberautocomplete",
     "cucumberautocomplete.steps": [
         "src/tests/**/*.ts"

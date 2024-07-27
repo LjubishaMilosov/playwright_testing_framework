@@ -12,6 +12,10 @@ interface Player {
   invalidUsername: string; 
   invalidPassword: string;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3372c574aea4f789f80c4c636b3f938acee40f84
 }
 
 export const findCredentialsForEnv = (iCustomWorld: ICustomWorld): Player | null => {
