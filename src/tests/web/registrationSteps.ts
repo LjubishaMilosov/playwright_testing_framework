@@ -51,9 +51,9 @@ When(`I click on register button`, async function(this:ICustomWorld) {
   await this.pagesObj?.registrationComponent.clickRegisterButton();
 });
 
-Then(`I expect user be redirected to the 'thank-you' page`, async function(this: ICustomWorld) {
+Then(`I expect user to be redirected to the thank-you page`, async function(this: ICustomWorld) {
   await this.pagesObj?.registrationComponent.waitUrlToChange();
-  //const currentUrl = this.pagesObj?.registrationComponent.getCurrentUrl();
+
   const currentUrl = this.page?.url();
   const expectedUrl = 'https://qa.btobet.net/thank-you/';
   expect(currentUrl).toEqual(expectedUrl);
@@ -62,14 +62,30 @@ Then(`I expect user be redirected to the 'thank-you' page`, async function(this:
   
 });
 
+Then(`I expect user to be redirected to the home page`, async function(this: ICustomWorld) {
+  await this.pagesObj?.registrationComponent.waitUrlToChangeHome();
+  //const currentUrl = this.pagesObj?.registrationComponent.getCurrentUrl();
+  const currentUrl = this.page?.url();
+  const expectedUrl = 'https://qa.btobet.net/';
+  expect(currentUrl).toEqual(expectedUrl);
+  console.log(currentUrl);
+  console.log(expectedUrl);
+  
+});
+
+When(`I click on the sportbook tab`, async function(this:ICustomWorld){
+  await this.pagesObj?.registrationComponent.clickOnSportbookTab();
+});
+
+When(`I enter username and password`, async function(this:ICustomWorld){
+  await this.pagesObj?.registrationComponent.enterLoginUsername(this);
+  await this.pagesObj?.registrationComponent.enterLoginPassword();
+});
+
 // Then(`I expect user to be successfully registered`, async function(this: ICustomWorld) {
 //   const loggedUser = await this.pagesObj?.registrationComponent.getLoggedUser();
 //   const isVisible = await loggedUser?.isVisible;
 //   expect(isVisible).toBeTruthy();
-// });
-
-// When(`I click on the sportbook tab`, async function(this:ICustomWorld){
-//   await this.pagesObj?.registrationComponent.clickOnSportbookTab();
 // });
 
 // When('I click on the user dropdown menu', async function(this: ICustomWorld) {

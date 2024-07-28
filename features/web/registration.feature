@@ -1,8 +1,9 @@
 @dev
 
-Feature: As a user I should be able to register on the platform
+Feature: New users should be able to register on the platform and login with their newly registered user
 
-  Scenario: As a user I can registrate on the platform
+  Scenario: As a user I can registrate and then login on the platform
+
     Given I navigate to the register page
     And I enter random first name
     And I enter random last name
@@ -14,8 +15,14 @@ Feature: As a user I should be able to register on the platform
     And I enter random promo code
     And I click terms and conditions checkbox
     And I click on register button
-   Then I expect user be redirected to the 'thank-you' page
+   Then I expect user to be redirected to the thank-you page
+   Then I expect user to be redirected to the home page
+   When I click on the sportbook tab
 
   
+  
+    When I enter username and password
+    And I click the login  button
+    Then I expect to be successfully logged in
 
     

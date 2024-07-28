@@ -2,7 +2,7 @@ import { generateRandomNumber, generateRandomString } from "../../../support/uti
 import { BasePage } from "../../basePage";
 import { ICustomWorld } from "../../world";
 
-
+const randomUsername = generateRandomString(4) + generateRandomNumber(5);
 export default class RegistrationComponent extends BasePage{
 
   private readonly registerElements = {
@@ -24,7 +24,8 @@ export default class RegistrationComponent extends BasePage{
     personalInfoOption: `//ul[@class='dropdown-menu dropdown-menu-right']//a[normalize-space()='Personal Info']`,
     userFirstNameInputValue: `input[name="FirstName"]`,
     //usersUsername:`div[class="bto-player-name pull-left"] span[class="bto-username"]`
-   
+    loginusernameInput: `[class='form-control input-sm bto-form-control-username btosystem-enter']`,
+    loginPasswordInput: `[class='form-control input-sm bto-form-control-password btosystem-enter show-content']`,
   }
 
   
@@ -41,8 +42,7 @@ export default class RegistrationComponent extends BasePage{
   }
 
   async enterUsername(iCustomWorld: ICustomWorld) {
-    const randomUsername = generateRandomString(4) + generateRandomNumber(5);
-    await this.page.locator(this.registerElements.usernameInput).fill(randomUsername)
+    await this.page.locator(this.registerElements.usernameInput).fill(randomUsername);
     iCustomWorld.username = randomUsername;
     
   }
@@ -81,19 +81,36 @@ export default class RegistrationComponent extends BasePage{
     await this.page.locator(this.registerElements.registerButton).click();
   }
 
+  //this function returns 'undefined', therefore cannot be used to assert tha the url has changed
   async waitUrlToChange() {
     await this.page.waitForLoadState("networkidle");
     await this.page.waitForURL('https://qa.btobet.net/thank-you/');
   }
 
+  async waitUrlToChangeHome() {
+    await this.page.waitForLoadState("networkidle");
+    await this.page.waitForURL('https://qa.btobet.net/');
+  }
+
+async enterLoginUsername(iCustomWorld: ICustomWorld) {
+  await this.page.locator(this.registerElements.loginusernameInput).fill(randomUsername);
+  iCustomWorld.username = randomUsername;
+  
+}
+
+async enterLoginPassword() {
+  const randomPassword = 'B2Btests@';
+  await this.page.locator(this.registerElements.loginPasswordInput).fill(randomPassword);
+}
+
   // getLoggedUser() {
   //   return this.page.waitForSelector(this.registerElements.userLogged);
   // }
 
-  // async clickOnSportbookTab() {
-  //   await this.page.click(this.registerElements.sportbookTab);
+  async clickOnSportbookTab() {
+    await this.page.click(this.registerElements.sportbookTab);
   
-  // }
+  }
 
   // async expandDropdown() {
   //   await this.page.waitForLoadState("networkidle")
