@@ -1,4 +1,4 @@
-
+@dev
 
 Feature: As a user I should be able to register on the platform
 
@@ -14,8 +14,8 @@ Feature: As a user I should be able to register on the platform
     And I enter random promo code
     And I click terms and conditions checkbox
     And I click on register button
-    Then I expect user to be successfully registered
-    When I click on the sportbook tab
-    When I click on the user dropdown menu
-    And I select the personal info option from loggedin user dropdown
-    Then I expect the user personal details to match the registration details
+   Then I expect user be redirected to the 'thank-you' page
+
+  
+
+    

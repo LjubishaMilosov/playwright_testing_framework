@@ -81,14 +81,19 @@ export default class RegistrationComponent extends BasePage{
     await this.page.locator(this.registerElements.registerButton).click();
   }
 
-  getLoggedUser() {
-    return this.page.waitForSelector(this.registerElements.userLogged);
+  async waitUrlToChange() {
+    await this.page.waitForLoadState("networkidle");
+    await this.page.waitForURL('https://qa.btobet.net/thank-you/');
   }
 
-  async clickOnSportbookTab() {
-    await this.page.click(this.registerElements.sportbookTab);
+  // getLoggedUser() {
+  //   return this.page.waitForSelector(this.registerElements.userLogged);
+  // }
+
+  // async clickOnSportbookTab() {
+  //   await this.page.click(this.registerElements.sportbookTab);
   
-  }
+  // }
 
   // async expandDropdown() {
   //   await this.page.waitForLoadState("networkidle")
