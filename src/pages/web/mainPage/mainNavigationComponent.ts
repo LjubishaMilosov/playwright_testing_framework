@@ -1,7 +1,7 @@
 import { BasePage } from '../../basePage';
 
 export default class mainNavigationComponent extends BasePage {
-  private readonly mainNavigatioElements = {
+  private readonly mainNavigationElements = {
     sports: `#menu-item-1158`,
   };
   
@@ -11,7 +11,7 @@ export default class mainNavigationComponent extends BasePage {
   }
 
   async navigateToSports() {
-    await this.page.click(this.mainNavigatioElements.sports);
+    await this.page.click(this.mainNavigationElements.sports);
   }
   
 
