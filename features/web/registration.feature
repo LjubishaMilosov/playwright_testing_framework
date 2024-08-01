@@ -1,6 +1,6 @@
-@dev
 
-Feature: New users should be able to register on the platform and login with their newly registered user
+
+Feature: New users should be able to register and login with their newly registered user
 
   Scenario: As a user I can registrate and then login on the platform
 
@@ -20,11 +20,11 @@ Feature: New users should be able to register on the platform and login with the
   #  When I click on the sportbook tab
 
     When I enter username and password
-    And I click the login  button
+    And I click the login button
     Then I expect to be successfully logged in
     
     When I click on the user dropdown menu
     And I select the personal info option from loggedin user dropdown
-    Then I expect the user personal details to match the registration details
+    Then I expect registration details to match user personal details
 
     
