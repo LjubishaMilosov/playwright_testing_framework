@@ -22,8 +22,8 @@ Feature: User Login
     And I click the login  button
     Then I expect to be successfully logged in
 
-    When I click on the user dropdown menu
-    And I select the personal info option from loggedin user dropdown
-    Then I expect the user personal details to match the registration details
+    # When I click on the user dropdown menu
+    # And I select the personal info option from loggedin user dropdown
+    # Then I expect the user personal details to match the registration details
 
     

@@ -9,11 +9,11 @@ export default class LoginComponent extends BasePage{
         loggedUserMenu: `[class='bto-user-logged']`,
         dropdownMenu: `.btn-group.personal button.dropdown-toggle`,
         personalInfoOption: `//ul[@class='dropdown-menu dropdown-menu-right']//a[normalize-space()='Personal Info']`,
-        usernameText: `div[class="bto-player-name pull-left"] span[class="bto-username"]`,
-        userFirstNameInputValue: `input[name="FirstName"]`,
-        userLastNameInputValue: `input[name="LastName"]`,
-        userEmailInputValue: `input[name="Email"]`,
-        userPhoneInputValue: `input[name="PhoneNumber"]`,
+        // usernameText: `div[class="bto-player-name pull-left"] span[class="bto-username"]`,
+        // userFirstNameInputValue: `input[name="FirstName"]`,
+        // userLastNameInputValue: `input[name="LastName"]`,
+        // userEmailInputValue: `input[name="Email"]`,
+        // userPhoneInputValue: `input[name="PhoneNumber"]`,
         invalidLoginDetailMsg: `p[style="display: block;"]`
 
     };
@@ -39,35 +39,35 @@ export default class LoginComponent extends BasePage{
     await this.page.click(this.loginFormElements.dropdownMenu);
   }
 
-  async selectPersonalInfo() {
-    await this.page.waitForSelector(this.loginFormElements.personalInfoOption);
-    await this.page.click(this.loginFormElements.personalInfoOption);
-  }
+  // async selectPersonalInfo() {
+  //   await this.page.waitForSelector(this.loginFormElements.personalInfoOption);
+  //   await this.page.click(this.loginFormElements.personalInfoOption);
+  // }
 
-  async getUserUsername() {
-    const userUsername = (await this.page.waitForSelector(this.loginFormElements.usernameText)).textContent();
-    return userUsername;
-  }
+  // async getUserUsername() {
+  //   const userUsername = (await this.page.waitForSelector(this.loginFormElements.usernameText)).textContent();
+  //   return userUsername;
+  // }
 
-  async getUserFirstName() {
-    const userFirstname = (await this.page.waitForSelector(this.loginFormElements.userFirstNameInputValue)).getAttribute('value');
-    return userFirstname;
-  }
+  // async getUserFirstName() {
+  //   const userFirstname = (await this.page.waitForSelector(this.loginFormElements.userFirstNameInputValue)).getAttribute('value');
+  //   return userFirstname;
+  // }
 
-  async getUserLastName() {
-    const userLastname = (await this.page.waitForSelector(this.loginFormElements.userLastNameInputValue)).getAttribute('value');
-    return userLastname;
-  }
+  // async getUserLastName() {
+  //   const userLastname = (await this.page.waitForSelector(this.loginFormElements.userLastNameInputValue)).getAttribute('value');
+  //   return userLastname;
+  // }
 
-  async getUserEmail() {
-    const userEmail = (await this.page.waitForSelector(this.loginFormElements.userEmailInputValue)).getAttribute('value');
-    return userEmail;
-  }
+  // async getUserEmail() {
+  //   const userEmail = (await this.page.waitForSelector(this.loginFormElements.userEmailInputValue)).getAttribute('value');
+  //   return userEmail;
+  // }
 
-  async getUserPhoneNumber() {
-    const userPhoneNumber = (await this.page.waitForSelector(this.loginFormElements.userPhoneInputValue)).getAttribute('value');
-    return userPhoneNumber;
-  }
+  // async getUserPhoneNumber() {
+  //   const userPhoneNumber = (await this.page.waitForSelector(this.loginFormElements.userPhoneInputValue)).getAttribute('value');
+  //   return userPhoneNumber;
+  // }
 
   async getLoginErrorMsg() {
     const loginErrorMsg = (await this.page.waitForSelector(this.loginFormElements.invalidLoginDetailMsg)).textContent();

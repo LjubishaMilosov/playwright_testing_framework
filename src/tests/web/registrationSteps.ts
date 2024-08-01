@@ -8,7 +8,7 @@ import { expect } from '@playwright/test';
 
  
 Given(`I navigate to the register page`, async function (this: ICustomWorld) {
-  await this.pagesObj?.basePage.goto('/register');
+  await this.pagesObj?.mainNavigationComponent.navigateToRegistrationPage();
 });
 
 When(`I enter random first name`, async function(this: ICustomWorld) {
@@ -82,25 +82,40 @@ When(`I enter username and password`, async function(this:ICustomWorld){
   await this.pagesObj?.registrationComponent.enterLoginPassword();
 });
 
-// Then(`I expect user to be successfully registered`, async function(this: ICustomWorld) {
-//   const loggedUser = await this.pagesObj?.registrationComponent.getLoggedUser();
-//   const isVisible = await loggedUser?.isVisible;
-//   expect(isVisible).toBeTruthy();
-// });
+When('I click on the user dropdown menu', async function(this: ICustomWorld) {
+  await this.pagesObj?.playerMenuTabsComponent.expandDropdown();
+})
 
-// When('I click on the user dropdown menu', async function(this: ICustomWorld) {
-//   await this.pagesObj?.registrationComponent.expandDropdown();
-// })
+When('I select the personal info option from loggedin user dropdown', async function(this: ICustomWorld) {
+  await this.pagesObj?.playerMenuTabsComponent.selectPersonalInfo();
+}); 
 
-// When('I select the personal info option from loggedin user dropdown', async function(this: ICustomWorld) {
-//   await this.pagesObj?.registrationComponent.selectPersonalInfo();
-// }); 
-
-// Then('I expect the user personal details to match the registration details', async function(this: ICustomWorld) {
-//   const userFirstname = await this.pagesObj?.registrationComponent.getUserFirstName();
+Then('I expect the user personal details to match the registration details', async function(this: ICustomWorld) {
+  const userUsername = await this.pagesObj?.playerMenuTabsComponent.getUserUsername();
+  const userFirstname = await this.pagesObj?.playerMenuTabsComponent.getUserFirstName();
+  const userLastname = await this.pagesObj?.playerMenuTabsComponent.getUserLastName();
+  const userEmail = await this.pagesObj?.playerMenuTabsComponent.getUserEmail();
+  const userPhonenumber = await this.pagesObj?.playerMenuTabsComponent.getUserPhoneNumber();
   
-//   const enteredFirstname = this.firstname;
-//   expect(userFirstname).toEqual(enteredFirstname);
-//   console.log(userFirstname)
-//   console.log(enteredFirstname)
-// })
+  const enteredUsername = this.username;
+  const enteredFirstname = this.firstname;
+  const enteredLastName = this.lastname;
+  const enteredEmail = this.email;
+  const enteredPhonenumber = this.phone;
+
+  expect(userUsername).toEqual(enteredUsername);
+  expect(userFirstname).toEqual(enteredFirstname);
+  expect(userLastname).toEqual(enteredLastName);
+  expect(userEmail).toEqual(enteredEmail);
+  expect(userPhonenumber).toEqual(enteredPhonenumber);
+  console.log(userUsername)
+  console.log(enteredUsername)
+  console.log(userFirstname)
+  console.log(enteredFirstname)
+  console.log(userLastname)
+  console.log(enteredLastName)
+  console.log(userEmail)
+  console.log(enteredEmail)
+  console.log(userPhonenumber)
+  console.log(enteredPhonenumber)
+});

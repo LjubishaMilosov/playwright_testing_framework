@@ -4,7 +4,7 @@ import { Given, Then, When} from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 
 Given('I navigate to the home page', async function(this:ICustomWorld) {
-    await this.pagesObj?.basePage.goto();
+    await this.pagesObj?.mainNavigationComponent.navigateToMainPage();
 });
 
 When('I enter "username" and "password"', async function(this:ICustomWorld) {
@@ -25,45 +25,45 @@ Then('I expect to be successfully logged in', async function(this:ICustomWorld) 
 });
 
 
-When('I click on the user dropdown menu', async function(this: ICustomWorld) {
-  await this.pagesObj?.loginComponent.expandDropdown();
-})
+// When('I click on the user dropdown menu', async function(this: ICustomWorld) {
+//   await this.pagesObj?.loginComponent.expandDropdown();
+// })
 
-When('I select the personal info option from loggedin user dropdown', async function(this: ICustomWorld) {
-  await this.pagesObj?.loginComponent.selectPersonalInfo();
-}); 
+// When('I select the personal info option from loggedin user dropdown', async function(this: ICustomWorld) {
+//   await this.pagesObj?.loginComponent.selectPersonalInfo();
+// }); 
 
-Then('I expect the user personal details to match the registration details', async function(this: ICustomWorld) {
-  const userUsername = await this.pagesObj?.loginComponent.getUserUsername();
-  const userFirstname = await this.pagesObj?.loginComponent.getUserFirstName();
-  const userLastname = await this.pagesObj?.loginComponent.getUserLastName();
-  const userEmail = await this.pagesObj?.loginComponent.getUserEmail();
-  const userPhonenumber = await this.pagesObj?.loginComponent.getUserPhoneNumber();
-  const credentials = findCredentialsForEnv(this);
+// Then('I expect the user personal details to match the registration details', async function(this: ICustomWorld) {
+//   const userUsername = await this.pagesObj?.loginComponent.getUserUsername();
+//   const userFirstname = await this.pagesObj?.loginComponent.getUserFirstName();
+//   const userLastname = await this.pagesObj?.loginComponent.getUserLastName();
+//   const userEmail = await this.pagesObj?.loginComponent.getUserEmail();
+//   const userPhonenumber = await this.pagesObj?.loginComponent.getUserPhoneNumber();
+//   const credentials = findCredentialsForEnv(this);
 
-  const expectedUsername = credentials!.username;
-  const expectedFirstname = credentials!.firstname;
-  const expectedLastname = credentials!.lastname;
-  const expectedEmail = credentials!.email;
-  const expectedUserPhonenumber = credentials!.phone;
+//   const expectedUsername = credentials!.username;
+//   const expectedFirstname = credentials!.firstname;
+//   const expectedLastname = credentials!.lastname;
+//   const expectedEmail = credentials!.email;
+//   const expectedUserPhonenumber = credentials!.phone;
 
-  //expect(userUsername).toEqual(enteredUsername);
-  expect(userUsername).toEqual(expectedUsername);
-  expect(userFirstname).toEqual(expectedFirstname);
-  expect(userLastname).toEqual(expectedLastname);
-  expect(userEmail).toEqual(expectedEmail);
-  expect(userPhonenumber).toEqual(expectedUserPhonenumber);
-//   console.log(userUsername);
-//   console.log(expectedUsername);
-//   console.log(userFirstname);
-//   console.log(expectedFirstname);
-//   console.log(userLastname);
-//   console.log(expectedLastname);
-//   console.log(userEmail);
-//   console.log(expectedEmail);
-//   console.log(userPhonenumber);
-//   console.log(expectedUserPhonenumber);
-});
+//   //expect(userUsername).toEqual(enteredUsername);
+//   expect(userUsername).toEqual(expectedUsername);
+//   expect(userFirstname).toEqual(expectedFirstname);
+//   expect(userLastname).toEqual(expectedLastname);
+//   expect(userEmail).toEqual(expectedEmail);
+//   expect(userPhonenumber).toEqual(expectedUserPhonenumber);
+// //   console.log(userUsername);
+// //   console.log(expectedUsername);
+// //   console.log(userFirstname);
+// //   console.log(expectedFirstname);
+// //   console.log(userLastname);
+// //   console.log(expectedLastname);
+// //   console.log(userEmail);
+// //   console.log(expectedEmail);
+// //   console.log(userPhonenumber);
+// //   console.log(expectedUserPhonenumber);
+// });
 
 Then('I expect error message to appear', async function(this:ICustomWorld) {
   const errorMsg = await this.pagesObj?.loginComponent.getLoginErrorMsg();

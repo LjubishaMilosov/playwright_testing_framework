@@ -20,12 +20,10 @@ export default class RegistrationComponent extends BasePage{
     userLogged: `[class='bto-user-logged']`,
     userIcon: `bto-icon-user`,
     sportbookTab: `#menu-item-1158 > a`,
-    dropdownMenu: `.btn-group.personal button.dropdown-toggle`,
-    personalInfoOption: `//ul[@class='dropdown-menu dropdown-menu-right']//a[normalize-space()='Personal Info']`,
-    userFirstNameInputValue: `input[name="FirstName"]`,
-    //usersUsername:`div[class="bto-player-name pull-left"] span[class="bto-username"]`
+
     loginusernameInput: `[class='form-control input-sm bto-form-control-username btosystem-enter']`,
     loginPasswordInput: `[class='form-control input-sm bto-form-control-password btosystem-enter show-content']`,
+    
   }
 
   
@@ -95,6 +93,7 @@ export default class RegistrationComponent extends BasePage{
 async enterLoginUsername(iCustomWorld: ICustomWorld) {
   await this.page.locator(this.registerElements.loginusernameInput).fill(randomUsername);
   iCustomWorld.username = randomUsername;
+  console.log(`random username: ${randomUsername}`);
   
 }
 
@@ -111,21 +110,5 @@ async enterLoginPassword() {
     await this.page.click(this.registerElements.sportbookTab);
   
   }
-
-  // async expandDropdown() {
-  //   await this.page.waitForLoadState("networkidle")
-  //   await this.page.click(this.registerElements.dropdownMenu);
-  // }
-
-  // async selectPersonalInfo() {
-  //   await this.page.waitForSelector(this.registerElements.personalInfoOption);
-  //   await this.page.click(this.registerElements.personalInfoOption);
-  // }
-
-  // async getUserFirstName() {
-  //   const userFirstname = (await this.page.waitForSelector(this.registerElements.userFirstNameInputValue)).getAttribute('value')
-
-  //   return userFirstname;
-  // }
 
 };

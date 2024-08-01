@@ -17,12 +17,14 @@ Feature: New users should be able to register on the platform and login with the
     And I click on register button
    Then I expect user to be redirected to the thank-you page
    Then I expect user to be redirected to the home page
-   When I click on the sportbook tab
+  #  When I click on the sportbook tab
 
-  
-  
     When I enter username and password
     And I click the login  button
     Then I expect to be successfully logged in
+    
+    When I click on the user dropdown menu
+    And I select the personal info option from loggedin user dropdown
+    Then I expect the user personal details to match the registration details
 
     
