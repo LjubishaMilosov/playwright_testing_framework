@@ -1,4 +1,4 @@
-
+@dev
 
 Feature: As a user I should be able to register on the platform
 

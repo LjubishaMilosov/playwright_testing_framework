@@ -13,6 +13,10 @@ export default class mainNavigationComponent extends BasePage {
   async navigateToSports() {
     await this.page.click(this.mainNavigatioElements.sports);
   }
+
+  async navigateToRegistrationPage() {
+    await this.goto('/register');
+  }
   
 
 };

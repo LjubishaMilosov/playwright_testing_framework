@@ -8,7 +8,7 @@ import { expect } from '@playwright/test';
 
  
 Given('I navigate to the register page', async function (this: ICustomWorld) {
-  await this.pagesObj?.basePage.goto('/register');
+  await this.pagesObj?.mainNavigationComponent.navigateToRegistrationPage();
 });
 
 
