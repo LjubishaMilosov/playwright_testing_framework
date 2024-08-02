@@ -12,6 +12,7 @@ export default class PlayerMenuTabsComponent extends BasePage{
 
   private readonly personalInfoTabElements = {
     
+    personalTab:`a[data-target="personal"]`,
     usernameText: `div[class="bto-player-name pull-left"] span[class="bto-username"]`,
     userFirstNameInputValue: `input[name="FirstName"]`,
     userLastNameInputValue: `input[name="LastName"]`,
@@ -27,6 +28,11 @@ export default class PlayerMenuTabsComponent extends BasePage{
   async selectPersonalInfo() {
     await this.page.waitForSelector(this.personalInfoDropdownElements.personalInfoOption);
     await this.page.click(this.personalInfoDropdownElements.personalInfoOption);
+  }
+
+  async getPersonalTabtext() {
+    const personalTabText = (await this.page.waitForSelector(this.personalInfoTabElements.personalTab)).textContent();
+    return personalTabText;
   }
 
   async getUserUsername() {
@@ -54,5 +60,7 @@ export default class PlayerMenuTabsComponent extends BasePage{
     const userPhoneNumber = (await this.page.waitForSelector(this.personalInfoTabElements.userPhoneInputValue)).getAttribute('value');
     return userPhoneNumber;
   }
+
+
 
 }

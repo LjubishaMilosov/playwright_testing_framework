@@ -7,7 +7,7 @@ import { expect } from '@playwright/test';
 
 
  
-Given(`I navigate to the register page`, async function (this: ICustomWorld) {
+Given(`I navigate to register page`, async function (this: ICustomWorld) {
   await this.pagesObj?.mainNavigationComponent.navigateToRegistrationPage();
 });
 
@@ -31,11 +31,11 @@ When('I enter random phone number', async function(this: ICustomWorld) {
   await this.pagesObj?.registrationComponent.enterPhoneNumber(this);
 });
 
-When(`I enter the password`, async function(this:ICustomWorld){
+When(`I enter password`, async function(this:ICustomWorld){
   await this.pagesObj?.registrationComponent.enterPassword();
 });
 
-When(`I enter the confirm password`, async function(this:ICustomWorld) {
+When(`I enter confirm password`, async function(this:ICustomWorld) {
   await this.pagesObj?.registrationComponent.enterConfirmPassword();
 });
 
@@ -51,7 +51,7 @@ When(`I click on register button`, async function(this:ICustomWorld) {
   await this.pagesObj?.registrationComponent.clickRegisterButton();
 });
 
-Then(`I expect user to be redirected to the thank-you page`, async function(this: ICustomWorld) {
+Then(`I expect user to be redirected to thank-you page`, async function(this: ICustomWorld) {
   await this.pagesObj?.registrationComponent.waitUrlToChange();
 
   const currentUrl = this.page?.url();
@@ -62,7 +62,7 @@ Then(`I expect user to be redirected to the thank-you page`, async function(this
   
 });
 
-Then(`I expect user to be redirected to the home page`, async function(this: ICustomWorld) {
+Then(`I expect user to be redirected to home page`, async function(this: ICustomWorld) {
   await this.pagesObj?.registrationComponent.waitUrlToChangeHome();
   //const currentUrl = this.pagesObj?.registrationComponent.getCurrentUrl();
   const currentUrl = this.page?.url();

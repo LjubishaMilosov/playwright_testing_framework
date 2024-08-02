@@ -3,7 +3,7 @@ import { Page, BrowserContext } from '@playwright/test';
 import LoginComponent from './mainPage/loginComponent';
 import MainNavigationComponent from './mainPage/mainNavigationComponent';
 import RegistrationComponent from './mainPage/registrationComponent';
-import PlayerMenuTabsComponent from './mainPage/playerMenuTabsComponent';
+import PlayerInfoComponent from './mainPage/playerInfoComponent';
 
 
 
@@ -14,8 +14,7 @@ export class PomProvider {
   
   loginComponent: LoginComponent;
   mainNavigationComponent: MainNavigationComponent;
-  playerMenuTabsComponent: PlayerMenuTabsComponent;
-
+  playerInfoComponent: PlayerInfoComponent;
   registrationComponent: RegistrationComponent;
   
   
@@ -26,6 +25,6 @@ export class PomProvider {
     this.loginComponent = new LoginComponent(page,context);
     this.mainNavigationComponent = new MainNavigationComponent(page, context); 
     this.registrationComponent = new RegistrationComponent(page, context);
-   this.playerMenuTabsComponent = new PlayerMenuTabsComponent(page, context);
+    this.playerInfoComponent = new PlayerInfoComponent(page,context);
    
 }}

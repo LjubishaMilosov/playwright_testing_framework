@@ -102,10 +102,6 @@ async enterLoginPassword() {
   await this.page.locator(this.registerElements.loginPasswordInput).fill(randomPassword);
 }
 
-  // getLoggedUser() {
-  //   return this.page.waitForSelector(this.registerElements.userLogged);
-  // }
-
   async clickOnSportbookTab() {
     await this.page.click(this.registerElements.sportbookTab);
   

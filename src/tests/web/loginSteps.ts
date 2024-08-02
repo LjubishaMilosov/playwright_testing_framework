@@ -3,7 +3,7 @@ import { findCredentialsForEnv } from "../../support/auth/auth";
 import { Given, Then, When} from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 
-Given('I navigate to the home page', async function(this:ICustomWorld) {
+Given('I navigate to home page', async function(this:ICustomWorld) {
     await this.pagesObj?.mainNavigationComponent.navigateToMainPage();
 });
 
@@ -14,7 +14,7 @@ When('I enter "username" and "password"', async function(this:ICustomWorld) {
     await this.pagesObj?.loginComponent.enterPassword(credentials!.password);
 });
 
-When('I click the login button', async function(this:ICustomWorld) {
+When('I click on login button', async function(this:ICustomWorld) {
     await this.pagesObj?.loginComponent.clickLoginButton();
 });
 
