@@ -1,5 +1,5 @@
 
-
+ 
   This project is for automated UI browser tests using Playwright with Cucumber BDD, TypeScript, and Page Object Model (POM) patther is a robust and maintainable framework designed for automating end-to-end browser tests in a behavior-driven development (BDD) style. This project leverages the power of Playwright, a modern and cross-browser automation framework, combined with Cucumber for test specification, TypeScript for strong typing, and the Page Object Model pattern for organized and reusable test code.
   
   ## Get Started 🚀  
@@ -12,6 +12,7 @@
   - Git
   
   
+
 
 
 Create a .env file in the root directory of your project to manage environment variables

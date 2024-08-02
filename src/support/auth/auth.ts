@@ -10,8 +10,6 @@ interface Player {
   phone: string;
   invalidUsername: string; 
   invalidPassword: string;
-
-
 }
 
 export const findCredentialsForEnv = (iCustomWorld: ICustomWorld): Player | null => {
