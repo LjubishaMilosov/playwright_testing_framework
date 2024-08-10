@@ -1,4 +1,4 @@
-@dev
+
 
 Feature: Player's info tabs should display the correct information
 

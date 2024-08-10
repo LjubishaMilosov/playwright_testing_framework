@@ -4,6 +4,7 @@ const featureOrder = [
   'web/login.feature',
   'web/playerInfo.feature',
   'web/registration.feature',
+  'mobile/loginMobile.feature',
    
 ];
 
