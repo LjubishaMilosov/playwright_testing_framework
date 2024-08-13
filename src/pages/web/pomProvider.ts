@@ -5,7 +5,7 @@ import MainNavigationComponent from './mainPage/mainNavigationComponent';
 import RegistrationComponent from './mainPage/registrationComponent';
 import PlayerInfoComponent from './mainPage/playerInfoComponent';
 import SearchComponent from './fixtureTree/searchComponent';
-
+import QuickLinksComponent from './fixtureTree/quickLinksComponent';
 
 
 
@@ -18,6 +18,8 @@ export class PomProvider {
   playerInfoComponent: PlayerInfoComponent;
   registrationComponent: RegistrationComponent;
   searchComponent: SearchComponent;
+
+  quickLinksComponent: QuickLinksComponent;
   
   
 
@@ -31,5 +33,6 @@ export class PomProvider {
 
     //Fixture Tree
     this.searchComponent = new SearchComponent(page, context);
+    this.quickLinksComponent = new QuickLinksComponent(page, context);
    
 }}

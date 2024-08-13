@@ -9,6 +9,7 @@ export interface ICustomWorld extends World {
   pagesObj?: PomProvider;
   pagesObjMobile?: PomProviderMobile;
   popupPage?: Page;
+  modifiedText?: string | null;
   
   
   firstname?: string;

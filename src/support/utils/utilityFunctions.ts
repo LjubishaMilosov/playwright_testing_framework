@@ -23,41 +23,43 @@ export function generateRandomNumber(length: number): string {
   return randomNumber;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export function getRandomIndexNotFirst(max: number): number {
   // Generate a random index excluding the first element
   return Math.floor(Math.random() * (max - 1)) + 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export function getRandomIndexNotLast(max: number): number {
   const adjustedMax = max - 1;
   return Math.floor(Math.random() * adjustedMax);
