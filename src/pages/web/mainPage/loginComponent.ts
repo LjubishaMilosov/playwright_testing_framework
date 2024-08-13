@@ -9,7 +9,8 @@ export default class LoginComponent extends BasePage{
         loggedUserMenu: `[class='bto-user-logged']`,
         dropdownMenu: `.btn-group.personal button.dropdown-toggle`,
         personalInfoOption: `//ul[@class='dropdown-menu dropdown-menu-right']//a[normalize-space()='Personal Info']`,
-        invalidLoginDetailMsg: `p[style="display: block;"]`
+        //invalidLoginDetailMsg: `p[style="display: block;"]`,
+        invalidLoginDetailMsg: `[class="swal-content__div"]`,
 
     };
 

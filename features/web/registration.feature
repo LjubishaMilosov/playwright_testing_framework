@@ -1,4 +1,3 @@
-@dev
 
 Feature: New users should be able to register and login with their newly registered user
 

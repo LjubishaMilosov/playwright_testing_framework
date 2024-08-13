@@ -7,11 +7,8 @@ import { expect } from '@playwright/test';
 
 
  
-<<<<<<< HEAD
-Given('I navigate to the register page', async function (this: ICustomWorld) {
-=======
+
 Given(`I navigate to register page`, async function (this: ICustomWorld) {
->>>>>>> 018be6e3fdbf6b1defea7ffd2fbede61679d49de
   await this.pagesObj?.mainNavigationComponent.navigateToRegistrationPage();
 });
 

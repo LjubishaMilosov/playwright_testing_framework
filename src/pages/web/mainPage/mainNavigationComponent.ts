@@ -18,8 +18,5 @@ export default class mainNavigationComponent extends BasePage {
     await this.goto('/register');
   }
   
-  async navigateToRegistrationPage() {
-    await this.goto('/register');
-  }
 
 };

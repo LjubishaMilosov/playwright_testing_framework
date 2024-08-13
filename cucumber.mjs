@@ -2,6 +2,7 @@ import { checkFileExists } from './src/support/utils/checkFileExists.mjs';
 
 const featureOrder = [
   'web/login.feature',
+  'web/fixtureTree.feature',
   'web/playerInfo.feature',
   'web/registration.feature',
   'mobile/loginMobile.feature',

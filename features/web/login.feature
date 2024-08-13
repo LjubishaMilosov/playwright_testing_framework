@@ -1,5 +1,6 @@
 
 
+
 Feature: User should be able to successfully Login 
 
   Scenario: User logs in with invalid username
@@ -22,8 +23,7 @@ Feature: User should be able to successfully Login
     And I click on login button
     Then I expect to be successfully logged in
 
-    # When I click on the user dropdown menu
-    # And I select the personal info option from loggedin user dropdown
+
      
 
     
