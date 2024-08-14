@@ -16,3 +16,14 @@ Then(`I expect to see a list of searched matches`, async function(this: ICustomW
   const isVisible = await quickEvent?.isVisible();
   expect(isVisible).toBeTruthy;
 });
+
+//QuickLinks LoginComponent
+When(`I click on random league from Quick links`, async function (this: ICustomWorld) {
+  await this.pagesObj?.quickLinksComponent.clickQuickLinksAndGetText(this);
+});
+
+Then(`I expect the league with the same name to be displayed in the title`, async function(this: ICustomWorld){
+  const textAfterClick = await this.pagesObj?.widgetPillsNavComponent.getWidgetTitle(this);
+  //expect(this.modifiedText).toContain(textAfterClick);  
+  expect(textAfterClick).toContain(this.modifiedText);
+});

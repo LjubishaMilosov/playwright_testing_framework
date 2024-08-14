@@ -16,7 +16,7 @@ export default class QuickLinksComponent extends BasePage {
     const quickLinksText = await selectedSport.textContent();
     console.log(quickLinksText);
     ICustomWorld.modifiedText = quickLinksText?.trim();
-
+    console.log(ICustomWorld.modifiedText = quickLinksText?.trim());
     await selectedSport.click();
   }
 }
