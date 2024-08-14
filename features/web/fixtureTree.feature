@@ -19,3 +19,7 @@ Examples:
 Scenario Outline: User navigates to quick links
 When I click on random league from Quick links
 Then I expect the league with the same name to be displayed in the title
+
+Scenario: User Navigates to All Sports
+When I click on a random sport
+Then I expect to see a list of tournaments

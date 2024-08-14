@@ -28,38 +28,6 @@ export function getRandomIndexNotFirst(max: number): number {
   return Math.floor(Math.random() * (max - 1)) + 1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export function getRandomIndexNotLast(max: number): number {
   const adjustedMax = max - 1;
   return Math.floor(Math.random() * adjustedMax);
