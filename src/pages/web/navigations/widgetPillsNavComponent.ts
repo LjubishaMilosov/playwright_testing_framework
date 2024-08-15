@@ -5,7 +5,9 @@ import { ICustomWorld } from "../../world";
 export default class WidgetPillsNavComponent extends BasePage {
   private readonly widgetPillsNavElements = {
     navBar: `.bto-sb-widget.bto-sb-widget-category-nav .bto-sb-widget-content`,
-    widgetTitle:`div.bto-sb-widget-title.bto-sb-widget-nav-icon > h3`
+    widgetTitle: `div.bto-sb-widget-title.bto-sb-title-icon.bto-sb-title-big.bto-sb-title-breadcrumb > h3`,
+    
+    //widgetTitle:`div.bto-sb-widget-title.bto-sb-widget-nav-icon > h3`  //default
   }
 
   async getNavBar() {

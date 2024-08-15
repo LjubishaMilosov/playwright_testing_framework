@@ -3,8 +3,8 @@ import { Given, When, Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
 
 
-Given('I navigate to sports page', async function (this: ICustomWorld) {
-  this.pagesObj?.mainNavigationComponent.navigateToSports();
+Given('I navigate to sports US layout page', async function (this: ICustomWorld) {
+  this.pagesObj?.mainNavigationComponent.navigateToSportsUSlayout();
 });
 
 When(`I type {string} into the search input field`, async function(this: ICustomWorld, sport: string) {
@@ -33,8 +33,12 @@ When(`I click on a random sport`, async function (this: ICustomWorld) {
   await this.pagesObj?.allSportsComponent.clickOnRandomSport();
 });
 
+Then(`I click on Tournament widget header`, async function (this:ICustomWorld) {
+await this.pagesObj?.turnamentsComponent.clickOnTournamentWidgetHeader();
+});
+
 Then(`I expect to see a list of tournaments`, async function(this: ICustomWorld) {
-  await this.pagesObj?.allSportsComponent.getTournaments();
+  await this.pagesObj?.turnamentsComponent.getTournaments();
 });
 
 
