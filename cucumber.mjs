@@ -6,6 +6,7 @@ const featureOrder = [
   'web/playerInfo.feature',
   'web/registration.feature',
   'mobile/loginMobile.feature',
+  'mobile/fixtureTreeMobile.feature',
    
 ];
 

@@ -10,6 +10,7 @@ export interface ICustomWorld extends World {
   pagesObjMobile?: PomProviderMobile;
   popupPage?: Page;
   modifiedText?: string | null;
+  indexForRandomEvent?: number[];
   
   
   firstname?: string;
