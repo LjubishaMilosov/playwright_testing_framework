@@ -21,3 +21,15 @@ Scenario Outline: User navigates to Sports on mobile
       | sport  |
       | Soccer |
       | Ice Hockey |
+
+Scenario Outline: User navigates to Sprts from the scrollable menu
+  When I click on "<sport>" from the scrollable menu
+  And I click on random category
+  And I click on random tournament on mobile
+  Then I expect to see a list of avaliable events on mobile
+
+    Examples:
+      | sport  |
+      | Soccer |
+      | Ice Hockey |
+

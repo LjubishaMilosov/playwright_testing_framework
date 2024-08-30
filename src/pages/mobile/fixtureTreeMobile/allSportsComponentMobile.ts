@@ -6,7 +6,8 @@ import { ICustomWorld } from "../../world";
 export default class AllSPortsComponentMobile extends BasePage {
   private readonly allSportsMobileElements = {
     allSports: '.bto-sb-mb-sports-icon.all-sports',
-    sportnameLocator: (sportName: string) => `//span[text()='${sportName}']`
+    sportNameLocator: (sportName: string) => `//span[text()='${sportName}']`, 
+    sportNameLocatorScrollable: (sportName: string) => `//a[text()=' ${sportName} ']`,
   }
 
 
@@ -16,11 +17,18 @@ export default class AllSPortsComponentMobile extends BasePage {
   }
 
   async clickOnSelectedSport(ICustomWorld: ICustomWorld, sportName: string) {
-      const sport = await this.page.waitForSelector(this.allSportsMobileElements.sportnameLocator(sportName));
+      const sport = await this.page.waitForSelector(this.allSportsMobileElements.sportNameLocator(sportName));
       const sportText = await sport.textContent();
       ICustomWorld.modifiedText = sportText;
-      await this.page.click(this.allSportsMobileElements.sportnameLocator(sportName));
+      await this.page.click(this.allSportsMobileElements.sportNameLocator(sportName));
 
+  }
+
+  async clickSportFromScollableMenu (ICustomWorld:ICustomWorld, sportName:string) {
+    const sport = await this.page.waitForSelector(this.allSportsMobileElements.sportNameLocatorScrollable(sportName));
+    const sportText = await sport.textContent();
+    ICustomWorld.modifiedText = sportText;
+    await this.page.click(this.allSportsMobileElements.sportNameLocatorScrollable(sportName));
   }
   
 }

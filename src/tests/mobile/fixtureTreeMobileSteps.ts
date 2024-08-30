@@ -31,6 +31,11 @@ When('I click on random tournament on mobile', async function (this: ICustomWorl
   await this.pagesObjMobile?.categoryPageMobile.clickOnRandomTournament(this);
 });
 
+// AllSportsComponenet - Scrollable Menu
+When (`I click on {string} from the scrollable menu`, async function(this:ICustomWorld, sportName:string) {
+  await this.pagesObjMobile?.allSPortsComponentMobile.clickSportFromScollableMenu(this, sportName);
+});
+
 Then('I expect to see a list of avaliable events on mobile', async function (this: ICustomWorld) {
   const listOfEvents = await this.pagesObjMobile?.categoryPageMobile.getListOfSelectedEvents();
   const isVisible = await listOfEvents?.isVisible();
