@@ -33,3 +33,29 @@ Scenario Outline: User navigates to Sprts from the scrollable menu
       | Soccer |
       | Ice Hockey |
 
+Scenario Outline: User searches for sports in the Search Input on mobile
+  When I click on search button
+  And I type in the search input field "<sport>"
+  Then I expect to see a list of searched matches on mobile
+
+  When I reset previously searched results on mobile
+
+  When I click on search button
+  And I type in the search input field "<club>"
+  Then I expect to see a list of searched matches on mobile
+
+  When I reset previously searched results on mobile
+
+  When I click on search button
+  And I type in the search input field "<league>"
+  Then I expect to see a list of searched matches on mobile
+
+  When I reset previously searched results on mobile
+
+  When I click on search button
+  And I type in the search input field "<country>"
+  Then I expect to see a list of searched matches on mobile
+
+  Examples:
+    | sport  | club  | league | country |
+    | soccer | Miami | NHL    | USA     |
