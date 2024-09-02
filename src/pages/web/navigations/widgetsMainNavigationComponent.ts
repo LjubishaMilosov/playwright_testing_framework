@@ -13,6 +13,10 @@ export default class WidgetsMainNavigationComponent extends BasePage {
     await this.page.waitForSelector(this.widgetsMainNavigationElements.highlightsButton);
     await this.page.click(this.widgetsMainNavigationElements.highlightsButton);
   }
+  async clickOnLiveButton() {
+    await this.page.waitForSelector(this.widgetsMainNavigationElements.liveButton);
+    await this.page.click(this.widgetsMainNavigationElements.liveButton);
+  }
 
 
 }

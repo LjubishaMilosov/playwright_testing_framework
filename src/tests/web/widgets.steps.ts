@@ -54,3 +54,6 @@ Then(
       console.log(textAfterClick);
     });
 
+    When('I click on the Live button', async function (this: ICustomWorld) {
+      await this.pagesObj?.widgetsMainNavigationComponent.clickOnLiveButton();
+    });
