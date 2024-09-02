@@ -16,5 +16,5 @@ Feature: Check Widgets for Sports Events
     And I expect Odds to be avalible
 
     When I select and click on specific event
-    Then I expect the Home team's name for the selected event should be displayed in Match Details
-    And I expect the Away team's name for the selected event should be displayed in Match Details
+    Then I expect the Home team's name for the selected event to be displayed in Match Details
+    And I expect the Away team's name for the selected event to be displayed in Match Details
