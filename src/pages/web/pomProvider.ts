@@ -7,6 +7,8 @@ import PlayerInfoComponent from './mainPage/playerInfoComponent';
 import SearchComponent from './fixtureTree/searchComponent';
 import QuickLinksComponent from './fixtureTree/quickLinksComponent';
 import WidgetPillsNavComponent from './navigations/widgetPillsNavComponent';
+import WidgetsMainNavigationComponent from './navigations/widgetsMainNavigationComponent';
+import WidgetsComponent from './widgets/widgetsComponent';
 import AllSportsComponent from './fixtureTree/allSportsComponent';
 import TournamentsComponent from './widgets/tournamentsComponent';
 
@@ -20,7 +22,9 @@ export class PomProvider {
   registrationComponent: RegistrationComponent;
   searchComponent: SearchComponent;
   quickLinksComponent: QuickLinksComponent;
-  widgetPillsNavComponent: WidgetPillsNavComponent
+  widgetPillsNavComponent: WidgetPillsNavComponent;
+  widgetsMainNavigationComponent: WidgetsMainNavigationComponent;
+  widgetsComponent: WidgetsComponent;
   allSportsComponent: AllSportsComponent;
   turnamentsComponent: TournamentsComponent;
 
@@ -34,11 +38,13 @@ export class PomProvider {
     this.playerInfoComponent = new PlayerInfoComponent(page,context);
     //widgets
     this.turnamentsComponent = new TournamentsComponent(page,context);
+    this.widgetsComponent = new WidgetsComponent(page, context);
     //FixtureTree
     this.searchComponent = new SearchComponent(page, context);
     this.quickLinksComponent = new QuickLinksComponent(page, context);
     this.allSportsComponent = new AllSportsComponent(page,context);
     //navigations
     this.widgetPillsNavComponent = new WidgetPillsNavComponent(page,context);
+    this.widgetsMainNavigationComponent = new WidgetsMainNavigationComponent(page,context);
   }
 }

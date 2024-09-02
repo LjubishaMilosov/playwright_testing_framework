@@ -7,7 +7,7 @@ const featureOrder = [
   'web/registration.feature',
   'mobile/loginMobile.feature',
   'mobile/fixtureTreeMobile.feature',
-   
+  'web/widgets.feature',
 ];
 
 const config = {

@@ -10,7 +10,7 @@ Given I navigate to sports US layout page
 
 Scenario Outline: User navigates to Search Input
 When I type "<sport>" into the search input field
-Then I expect to see a list of searched matches
+Then I expect to see a list of searched matches on web
 
 Examples:
   | sport  |

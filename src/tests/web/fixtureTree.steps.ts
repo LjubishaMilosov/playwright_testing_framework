@@ -11,7 +11,7 @@ When(`I type {string} into the search input field`, async function(this: ICustom
   await this.pagesObj?.searchComponent.searchSport(sport);
 });
 
-Then(`I expect to see a list of searched matches`, async function(this: ICustomWorld) {
+Then(`I expect to see a list of searched matches on web`, async function(this: ICustomWorld) {
   const quickEvent = await this.pagesObj?.searchComponent.getSearchResult();
   const isVisible = await quickEvent?.isVisible();
   expect(isVisible).toBeTruthy;

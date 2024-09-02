@@ -1,4 +1,3 @@
-@dev
 @mobile
 
 Feature: User navigates within the Fixture tree
