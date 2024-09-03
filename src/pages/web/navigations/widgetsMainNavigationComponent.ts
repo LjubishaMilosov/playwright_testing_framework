@@ -18,6 +18,11 @@ export default class WidgetsMainNavigationComponent extends BasePage {
     await this.page.click(this.widgetsMainNavigationElements.liveButton);
   }
 
+  async clickOnUpcomingButton() {
+    await this.page.waitForSelector(this.widgetsMainNavigationElements.upcomingButton);
+    await this.page.click(this.widgetsMainNavigationElements.upcomingButton);
+  }
+
 
 }
 

@@ -57,3 +57,19 @@ Then(
     When('I click on the Live button', async function (this: ICustomWorld) {
       await this.pagesObj?.widgetsMainNavigationComponent.clickOnLiveButton();
     });
+
+    When(`I click on the Upcoming button`, async function (this:ICustomWorld){
+      await this.pagesObj?.widgetsMainNavigationComponent.clickOnUpcomingButton();
+    });
+
+    Then(`I expect the upcoming section to be displayed`, async function(this:ICustomWorld){
+      const getWidgetUpcoming = await this.pagesObj?.widgetsComponent.getWidgetUpcoming();
+      const isVisible = await getWidgetUpcoming?.isVisible();
+      expect(isVisible).toBeTruthy();
+    });
+
+    Then(`I expect the live section to be displayed`, async function(this:ICustomWorld){
+      const getWidgetLive = await this.pagesObj?.widgetsComponent.getWidgetLive();
+      const isVisible = await getWidgetLive?.isVisible();
+      expect(isVisible).toBeTruthy();
+    });
