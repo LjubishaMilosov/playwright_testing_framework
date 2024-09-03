@@ -6,6 +6,7 @@ import AllSPortsComponentMobile from './fixtureTreeMobile/allSportsComponentMobi
 import SearchComponentMobile from './fixtureTreeMobile/searchComponentMobile';
 import MainNavigationComponentMobile from './mainPageMobile/mainNavigationComponentMobile';
 import CategoryPageMobile from './widgetsMobile/categoryPageMobile';
+import WidgetsComponentMobile from './widgetsMobile/widgetsComponentMobile';
 
 
 export class PomProviderMobile {
@@ -15,7 +16,8 @@ export class PomProviderMobile {
   allSPortsComponentMobile: AllSPortsComponentMobile;
   searchComponentMobile: SearchComponentMobile;
   mainNavigationComponentMobile : MainNavigationComponentMobile;
-  categoryPageMobile :CategoryPageMobile;
+  categoryPageMobile: CategoryPageMobile;
+  widgetsComponentMobile: WidgetsComponentMobile;
   
 
   constructor(page: Page, context: BrowserContext) {
@@ -25,6 +27,8 @@ export class PomProviderMobile {
     this.allSPortsComponentMobile = new AllSPortsComponentMobile(page,context);
     this.searchComponentMobile = new SearchComponentMobile(page,context);
     this.mainNavigationComponentMobile = new MainNavigationComponentMobile(page,context);
+    //widgets mobile:
     this.categoryPageMobile = new CategoryPageMobile(page, context);
+    this.widgetsComponentMobile = new WidgetsComponentMobile(page,context);
 }
 }

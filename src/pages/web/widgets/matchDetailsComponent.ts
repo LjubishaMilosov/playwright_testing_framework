@@ -6,6 +6,8 @@ export default class MatchDetailsComponent extends BasePage {
   private readonly matchDetailsElements = {
     headerHomeTeamName: `div[class='bto-sb-mb-team bto-sb-mb-team-home'] span[class='bto-sb-mb-team-name']`,
     headerAwayTeamName: `div[class='bto-sb-mb-team bto-sb-mb-team-away'] span[class='bto-sb-mb-team-name']`,
+    eventNameHomeTeam: `.bto-sb-event-team .bto-sb-event-home`,
+    eventNameAwayTeam: `.bto-sb-event-team .bto-sb-event-away`,
   }
 
 async getHeaderHomeTeamName(iCustomWorld:ICustomWorld) {
@@ -14,7 +16,14 @@ async getHeaderHomeTeamName(iCustomWorld:ICustomWorld) {
 
   async getHeaderAwayTeamName(iCustomWorld:ICustomWorld) {
     return getTextContent.call(iCustomWorld, this.matchDetailsElements.headerAwayTeamName);
-  
   }
+
+  async getEventNameForHometeam(iCustomWorld:ICustomWorld) {
+    return getTextContent.call(iCustomWorld, this.matchDetailsElements.eventNameHomeTeam);
+  }
+  async getEventNameForAwayTeam(iCustomWorld:ICustomWorld) {
+    return getTextContent.call(iCustomWorld, this.matchDetailsElements.eventNameAwayTeam);
+  }
+  
 
 }

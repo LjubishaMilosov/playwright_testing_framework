@@ -8,6 +8,8 @@ const featureOrder = [
   'mobile/loginMobile.feature',
   'mobile/fixtureTreeMobile.feature',
   'web/widgets.feature',
+  'mobile/widgetsMobile.feature',
+  'web/matchDetails.feature',
 ];
 
 const config = {
