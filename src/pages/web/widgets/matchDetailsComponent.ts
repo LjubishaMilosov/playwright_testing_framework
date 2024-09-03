@@ -8,6 +8,9 @@ export default class MatchDetailsComponent extends BasePage {
     headerAwayTeamName: `div[class='bto-sb-mb-team bto-sb-mb-team-away'] span[class='bto-sb-mb-team-name']`,
     eventNameHomeTeam: `.bto-sb-event-team .bto-sb-event-home`,
     eventNameAwayTeam: `.bto-sb-event-team .bto-sb-event-away`,
+    marketNames:  `.bto-sb-event-marketlabel`,
+    
+
   }
 
 async getHeaderHomeTeamName(iCustomWorld:ICustomWorld) {
@@ -23,6 +26,10 @@ async getHeaderHomeTeamName(iCustomWorld:ICustomWorld) {
   }
   async getEventNameForAwayTeam(iCustomWorld:ICustomWorld) {
     return getTextContent.call(iCustomWorld, this.matchDetailsElements.eventNameAwayTeam);
+  }
+
+  async getOutcomeName() {
+    return this.page.waitForSelector(this.matchDetailsElements.marketNames);
   }
   
 

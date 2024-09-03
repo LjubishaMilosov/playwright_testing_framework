@@ -23,7 +23,7 @@ Then(`I expect Market names to be displayed on web`, async function(this:ICustom
   expect(isVisible).toBeTruthy();
 });
 
-Then(`I expect Odds to be avalible on web`, async function(this:ICustomWorld){
+Then(`I expect Odds to be available on web`, async function(this:ICustomWorld){
   const odds = await this.pagesObj?.widgetsComponent.getOdds();
   const isVisible = await odds?.isVisible();
   expect(isVisible).toBeTruthy();

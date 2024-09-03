@@ -12,7 +12,7 @@ Feature: Check Widgets for Sports Events
     Then I expect the highlights section to be displayed on web
     And I expect list of Events to be displayed on web
     And I expect Market names to be displayed on web
-    And I expect Odds to be avalible on web
+    And I expect Odds to be available on web
 
     When I select and click on specific event on web
     Then I expect the Home team's name for the selected event to be displayed in Match Details on web
@@ -23,7 +23,7 @@ Feature: Check Widgets for Sports Events
     Then I expect the live section to be displayed on web
     And I expect list of Events to be displayed on web
     Then I expect Market names to be displayed on web
-    And I expect Odds to be avalible on web
+    And I expect Odds to be available on web
 
     When I select and click on specific event on web
     Then I expect the Home team's name for the selected event to be displayed in Match Details on web
@@ -34,7 +34,7 @@ Feature: Check Widgets for Sports Events
     Then I expect the upcoming section to be displayed on web
     And I expect list of Events to be displayed on web
     Then I expect Market names to be displayed on web
-    And I expect Odds to be avalible on web
+    And I expect Odds to be available on web
 
     When I select and click on specific event on web
     Then I expect the Home team's name for the selected event to be displayed in Match Details on web

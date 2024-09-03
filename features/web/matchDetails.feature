@@ -16,8 +16,8 @@ Background:
     Scenario: User navigates to the Random Event to see the Match Details
     And I expect the event name bellow the header for Home team to remain the same
     And I expect the event name bellow the header for Away team to remain the same
-    And I expect the outcome name to be displayed
-    And I expect Odds to be avalible
+    And I expect the outcome names to be displayed
+    And I expect Odds to be available on web
     And I expect to see the navigation bar
     And I expect navigation bar to contain the following tabs:
       | Popular     |
